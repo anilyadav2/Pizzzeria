@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from.forms import EntryForm, TopicForm, TopinForm
-from .models import Topic, Entry,Topin
+from .models import Topic, Entry,Topin 
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -31,8 +31,8 @@ def topic(request,topic_id):
 
 
 def topin(request,topin_id):
-    topin= Topin.objects.get(id=topin_id)
-    entries=topin.entry_set.all()
+    topin= Topin.objects.get(pk=topin_id)
+    entries=[topin]
     context={"topin":topin,'entries':entries}
     return render(request,"PizzaApp/topin.html",context)
 
