@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from.forms import EntryForm, TopicForm, TopinForm
 from .models import Topic, Entry,Topin
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 def index(request):
@@ -36,7 +38,7 @@ def topin(request,topin_id):
 
 
 
-
+@login_required
 def new_topic(request):
     if request.method != 'POST':
         form=TopicForm()
@@ -50,7 +52,7 @@ def new_topic(request):
     return render(request,"PizzaApp/new_topic.html",context)
 
 
-
+@login_required
 def new_topin(request):
     if request.method != 'POST':
         form=TopinForm()
@@ -66,7 +68,7 @@ def new_topin(request):
 
 
 
-
+@login_required
 def new_entry(request,topic_id):
     topic= Topic.objects.get(id=topic_id)
     if request.method != 'POST':
@@ -84,7 +86,7 @@ def new_entry(request,topic_id):
 
 
 
-
+@login_required
 def new_entry1(request,topin_id):
     topin= Topin.objects.get(id=topin_id)
     if request.method != 'POST':
@@ -105,7 +107,7 @@ def new_entry1(request,topin_id):
 
 
 
-
+@login_required
 def edit_entry(request,entry_id):
     entry= Entry.objects.get(id=entry_id)
     topic = entry.topic
@@ -126,7 +128,7 @@ def edit_entry(request,entry_id):
 
 
 
-
+@login_required
 def edit_entry1(request,entry1_id):
     entry1= Entry.objects.get(id=entry1_id)
     topin = entry1.topin
