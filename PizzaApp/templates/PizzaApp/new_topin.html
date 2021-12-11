@@ -1,0 +1,12 @@
+{% extends "PizzaApp/base.html" %}
+
+{% block content %}
+
+<p>Add a new Topin:</p>
+<form action="{% url 'PizzaApp:new_topin'  %}" method= 'POST'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name ="submit">Add Topin</button>
+</form>
+
+{% endblock content %}

@@ -4,12 +4,11 @@
 
 <p> <a href="{% url 'PizzaApp:topin' topin.id %} "> {{topin}} </a></p>
 
-<p>Edit Entry:</p>
-
-<form action="{% url 'PizzaApp:edit_entry1' entry1.id  %}" method= 'POST'>
+<p>Add a new Entry:</p>
+<form action="{% url 'PizzaApp:new_entry1' topin.id  %}" method= 'POST'>
     {% csrf_token %}
     {{form.as_p}}
-    <button name ="submit">Save changes</button>
+    <button name ="submit">Add Entry</button>
 </form>
 
 {% endblock content %}

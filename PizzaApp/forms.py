@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Topic,Entry
+from .models import Topic,Entry,Topin
 
 class TopicForm(forms.ModelForm):
     class Meta:
@@ -13,3 +13,10 @@ class EntryForm(forms.ModelForm):
         model=Entry
         fields=['text']
         labels={'text':''}
+
+class TopinForm(forms.ModelForm):
+    class Meta:
+        model=Topin
+        fields=['text']
+        labels={'text':''}
+

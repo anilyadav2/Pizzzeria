@@ -1,0 +1,22 @@
+<p> 
+    <a href="{% url 'PizzaApp:index'%}">Pizzeria</a></p> 
+
+{% block content %}
+
+
+<p> Topins
+</p>
+
+<ul>
+    {% for t in topins %}
+    <li>
+         <a href="{%url 'PizzaApp:topin' t.id %}">{{ t }}</a>
+        </li>
+    {% empty %}
+    <li> No topins added yet</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'PizzaApp:new_topin' %}"> Add a new Topin</a>
+
+{% endblock content %}

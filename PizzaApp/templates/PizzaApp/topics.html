@@ -1,9 +1,10 @@
-{% extends "PizzaApp/base.html" %}
+<p> 
+    <a href="{% url 'PizzaApp:index'%}">Pizzeria</a></p> 
 
 {% block content %}
 
 
-<p> Topics
+<p> Pizzas
 </p>
 
 <ul>
@@ -12,10 +13,10 @@
          <a href="{%url 'PizzaApp:topic' t.id %}">{{ t }}</a>
         </li>
     {% empty %}
-    <li> No toics added yet</li>
+    <li> No Pizza added yet</li>
     {% endfor %}
 </ul>
 
-<a href="{% url 'PizzaApp:new_topic' %}"> Add a new Topic</a>
+<a href="{% url 'PizzaApp:new_topic' %}"> Add a new Pizza</a>
 
 {% endblock content %}

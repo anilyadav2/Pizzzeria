@@ -1,6 +1,8 @@
 <p> 
     <a href="{% url 'PizzaApp:index'%}">Pizzeria</a></p> 
+    <p>Select your Pizza <p></p>
     <p><a href="{% url 'PizzaApp:topics'%}">Pizzas</a></p>
+    <p><a href="{% url 'PizzaApp:topins'%}">Topins</a></p>
 <p>
     {% if user.is_authenticated %}
         Hello ,{{user.username}}

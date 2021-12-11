@@ -1,20 +1,18 @@
-<p> 
-    <a href="{% url 'PizzaApp:index'%}">Pizzeria</a></p> 
+{% extends "PizzaApp/base.html" %}
 
 {% block content %}
 
 
-<p>Topic:{{topic}} <p>
+<p>Topin:{{topin}} <p>
 
     <ul>{% for e in entries %}
 
         <li>
 
             <p>{{e.text}}</p>
-            <p>{{e.price}}</p>
             <p>{{e.date_added}}</p>
             <p>
-                <a href="{% url 'PizzaApp:edit_entry' e.id%}"> Edit entry </a>
+                <a href="{% url 'PizzaApp:edit_entry1' e.id%}"> Edit entry </a>
             </p>
         </li>
         {% empty %}
@@ -24,7 +22,7 @@
         {% endfor %}
     </ul>
 <p>
-    <a href="{% url 'PizzaApp:new_entry' topic.id %}">Add a new Entry </a>
+    <a href="{% url 'PizzaApp:new_entry1' topin.id %}">Add a new Entry </a>
 </p>
 
 {% endblock content %}
