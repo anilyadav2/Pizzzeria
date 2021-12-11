@@ -1,8 +1,17 @@
-
-
 <p> 
-    <a href="{% url 'PizzaApp:index'%}">Pizzeria</a>
-    
+    <a href="{% url 'PizzaApp:index'%}">Pizzeria</a></p> 
+    <p><a href="{% url 'PizzaApp:topics'%}">Pizzas</a></p>
+<p>
+    {% if user.is_authenticated %}
+        Hello ,{{user.username}}
+        <a href="{% url 'users:logout' %}">Log out</a>
+        
+    {% else %}
+        <a href="{% url 'users:login' %}">Log in</a>
+        <a href="{% url 'users:register' %}">Register</a>
+        
+
+    {% endif %}
 
 <p>
 

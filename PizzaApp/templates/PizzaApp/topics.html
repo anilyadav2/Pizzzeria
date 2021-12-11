@@ -1,0 +1,21 @@
+{% extends "PizzaApp/base.html" %}
+
+{% block content %}
+
+
+<p> Topics
+</p>
+
+<ul>
+    {% for t in topics %}
+    <li>
+         <a href="{%url 'PizzaApp:topic' t.id %}">{{ t }}</a>
+        </li>
+    {% empty %}
+    <li> No toics added yet</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'PizzaApp:new_topic' %}"> Add a new Topic</a>
+
+{% endblock content %}

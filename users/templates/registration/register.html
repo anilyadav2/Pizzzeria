@@ -1,0 +1,17 @@
+{% extends "PizzaApp/base.html" %}
+
+{% block content %}
+
+
+
+<form acrion = "{% url 'users:register' %}" method = 'POST'>
+    {% csrf_token%}
+    {{form.as_p}}
+    <button name= "submit">Register</button>
+    <input type='hidden', name="next"
+    value="{% url 'PizzaApp:index' %}"/>
+
+
+</form>
+
+{% endblock content %}
