@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from.forms import EntryForm, TopicForm, TopinForm
-from .models import Topic, Entry,Topin 
+from .models import Topic, Entry,Topin,Entry1 
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -11,6 +11,7 @@ def index(request):
 
 def topics(request):
     topics= Topic.objects.order_by('date_added')
+    
     context={'topics':topics}
     return render(request,"PizzaApp/topics.html",context)
 
@@ -130,7 +131,7 @@ def edit_entry(request,entry_id):
 
 @login_required
 def edit_entry1(request,entry1_id):
-    entry1= Entry.objects.get(id=entry1_id)
+    entry1= Entry1.objects.get(id=entry1_id)
     topin = entry1.topin
 
 
@@ -143,7 +144,7 @@ def edit_entry1(request,entry1_id):
             return redirect('PizzaApp:topin',entry1_id=entry1_id)
 
     context={'entry1':entry1,'form':form, 'topin':topin}
-    return render(request,"PizzaApp/edit1_entry.html",context)
+    return render(request,"PizzaApp/edit_entry1.html",context)
 
 
 
