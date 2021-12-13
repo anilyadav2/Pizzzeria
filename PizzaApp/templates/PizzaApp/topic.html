@@ -18,17 +18,17 @@
         <img src="{{ e.image.url }}" class="img-responsive" style="width: 200px; float: left; margin-right: 10px;"/>
         {% endif %}
         <p>
-            <a href="{% url 'PizzaApp:edit_entry' e.id%}"> Edit entry </a>
+            <a href="{% url 'PizzaApp:edit_entry' e.id%}"> Edit Comments </a>
         </p>
     </li>
     {% empty %}
-    <li> there are no entries</li>
+    <li> there are no Comments</li>
 
 
     {% endfor %}
 </ul>
 <p>
-    <a href="{% url 'PizzaApp:new_entry' topic.id %}">Add a new Entry </a>
+    <a href="{% url 'PizzaApp:new_entry' topic.id %}">Add a new comment </a>
 </p>
 
 {% endblock content %}

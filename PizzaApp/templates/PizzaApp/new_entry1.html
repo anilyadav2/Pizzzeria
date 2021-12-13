@@ -4,7 +4,7 @@
 
 <p> <a href="{% url 'PizzaApp:topin' topin.id %} "> {{topin}} </a></p>
 
-<p>Add a new Entry:</p>
+<p>Add a new Comment:</p>
 <form action="{% url 'PizzaApp:new_entry1' topin.id  %}" method= 'POST'>
     {% csrf_token %}
     {{form.as_p}}

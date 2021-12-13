@@ -12,17 +12,17 @@
             <p>{{e.text}}</p>
             <p>{{e.date_added}}</p>
             <p>
-                <a href="{% url 'PizzaApp:edit_entry1' e.id%}"> Edit entry </a>
+                <a href="{% url 'PizzaApp:edit_entry1' e.id%}"> Edit Comments </a>
             </p>
         </li>
         {% empty %}
-        <li> there are no entries </li>
+        <li> there are no comments </li>
         
 
         {% endfor %}
     </ul>
 <p>
-    <a href="{% url 'PizzaApp:new_entry1' topin.id %}">Add a new Entry </a>
+    <a href="{% url 'PizzaApp:new_entry1' topin.id %}">Add a new Comments </a>
 </p>
 
 {% endblock content %}

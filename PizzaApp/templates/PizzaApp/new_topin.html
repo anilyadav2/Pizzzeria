@@ -6,7 +6,7 @@
 <form action="{% url 'PizzaApp:new_topin'  %}" method= 'POST' enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
-    <button name ="submit">Add Topin</button>
+    <button name ="submit">Add Toping</button>
 </form>
 
 {% endblock content %}

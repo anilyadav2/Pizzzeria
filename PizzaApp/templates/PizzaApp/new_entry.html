@@ -4,7 +4,7 @@
 
 <p> <a href="{% url 'PizzaApp:topic' topic.id %} "> {{topic}} </a></p>
 
-<p>Add a new Entry:</p>
+<p>Add a new Comment:</p>
 <form action="{% url 'PizzaApp:new_entry' topic.id  %}" method= 'POST' enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
