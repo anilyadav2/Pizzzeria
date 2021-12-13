@@ -1,5 +1,5 @@
-<p> 
-    <a href="{% url 'PizzaApp:index'%}">Pizzeria</a></p> 
+<p>
+    <a href="{% url 'PizzaApp:index'%}">Pizzeria</a></p>
 
 {% block content %}
 
@@ -9,9 +9,12 @@
 
 <ul>
     {% for t in topins %}
-    <li>
-         <a href="{%url 'PizzaApp:topin' t.id %}">{{ t }}</a>
-        </li>
+    <li style="display:grid;">
+        <a href="{%url 'PizzaApp:topin' t.id %}">{{ t }}</a>
+        {% if t.image %}
+        <img src="{{ t.image.url }}" class="img-responsive" style="width: 200px; float: left; margin-right: 10px;"/>
+        {% endif %}
+    </li>
     {% empty %}
     <li> No topins added yet</li>
     {% endfor %}

@@ -9,8 +9,11 @@
 
 <ul>
     {% for t in topics %}
-    <li>
+    <li style="display:grid;">
          <a href="{%url 'PizzaApp:topic' t.id %}">{{ t }}</a>
+         {% if t.image %}
+                <img src="{{ t.image.url }}" class="img-responsive" style="width: 200px; float: left; margin-right: 10px;"/>
+            {% endif %}
         </li>
     {% empty %}
     <li> No Pizza added yet</li>
